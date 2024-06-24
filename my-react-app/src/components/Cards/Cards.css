@@ -1,0 +1,28 @@
+.card {
+    border: 1px solid #333;
+    border-radius: 10px!important;
+    box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    max-width: 250px;
+    display: inline-block;
+  }
+
+.card .profilePhoto {
+    max-width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  .card .card-title {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+  }
+
+  .card .card-text {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666;
+  }
