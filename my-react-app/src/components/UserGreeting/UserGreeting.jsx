@@ -1,10 +1,16 @@
 import './UserGreeting.css';
 
 function UserGreeting(props) {
+    const welcomeMessage = <h2 className="welcome-message">
+        Welcome {props.username}
+        </h2>
+
+    const loginPrompt = <h2 className="login-prompt">
+        Please login to continue
+        </h2>
+
         return (
-            props.isLoggedIn ?
-                <h2>Welcome {props.username}</h2>  : 
-                <h2>Please login to continue</h2>
+            props.isLoggedIn ? welcomeMessage : loginPrompt
         );
 }
 
