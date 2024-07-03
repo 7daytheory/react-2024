@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <Card />
-      <Student />
+      <Student name="Matthew" email="matthewjlowe11@gmail.com" />
     </>
   );
 }
