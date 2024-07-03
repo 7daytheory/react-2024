@@ -22,4 +22,11 @@ Student.propTypes = {
     student: PropTypes.bool,
 }
 
+Student.defaultProps = {
+    name: "Default Name",
+    email: "Default@email.com",
+    age: 0,
+    isStudent: "false",
+}
+
 export default Student;

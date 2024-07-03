@@ -12,7 +12,6 @@ function App() {
         email="matthewjlowe11@gmail.com"
         age={30} // Not string literal (number) - requiires curly braces
         isStudent={true} // Not string literal (boolean) - requires curly braces
-        isFirst={true} // If first student to display
       />
       <Student 
         name="Marco"
