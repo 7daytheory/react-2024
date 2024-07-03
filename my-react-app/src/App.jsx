@@ -5,7 +5,12 @@ function App() {
   return (
     <>
       <Card />
-      <Student name="Matthew" email="matthewjlowe11@gmail.com" />
+      <Student 
+        name="Matthew"
+        email="matthewjlowe11@gmail.com"
+        age={30} //If not string literal - need to enclose in curly braces
+        isStudent={true}
+      />
     </>
   );
 }
