@@ -20,13 +20,13 @@ function App() {
       <Student 
         name="Brittany"
         email="brittany.example@hotmail.com"
-        age={27} //If not string literal - need to enclose in curly braces
+        age={27}
         isStudent={true}
       />
       <Student 
         name="Aman"
         email="example.aman@hotmail.com"
-        age={42} //If not string literal - need to enclose in curly braces
+        age={42}
         isStudent={true}
       />
     </>
