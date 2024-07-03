@@ -1,6 +1,8 @@
 import Card from "./components/Cards/Cards";
 import Student from "./components/Student/Student";
 
+//propTypes : a mechanism that ensures that the passeed value is of the correct datatype - age: propTypes.number
+
 function App() {
   return (
     <>
@@ -8,8 +10,8 @@ function App() {
       <Student 
         name="Matthew"
         email="matthewjlowe11@gmail.com"
-        age={30} //If not string literal - need to enclose in curly braces
-        isStudent={true}
+        age={30} // Not string literal (number) - requiires curly braces
+        isStudent={true} // Not string literal (boolean) - requires curly braces
       />
       <Student 
         name="Marco"
@@ -20,13 +22,13 @@ function App() {
       <Student 
         name="Brittany"
         email="brittany.example@hotmail.com"
-        age={27} //If not string literal - need to enclose in curly braces
+        age={27}
         isStudent={true}
       />
       <Student 
         name="Aman"
         email="example.aman@hotmail.com"
-        age={42} //If not string literal - need to enclose in curly braces
+        age={42}
         isStudent={true}
       />
     </>

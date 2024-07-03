@@ -1,8 +1,13 @@
 .student {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 2em;
+    font-size: 1em;
     padding: 10px;
     border: 1px solid hsl(0, 0%, 20%);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    max-width: 250px;
+    display: inline-block;
+    margin-right: 15px;
 }
 
 .student p {
