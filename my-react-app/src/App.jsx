@@ -1,5 +1,6 @@
 // import Card from "./components/Cards/Cards";
 // import Student from "./components/Student/Student";
+import List from "./components/List/List";
 import UserGreeting from "./components/UserGreeting/UserGreeting";
 
 //propTypes : a mechanism that ensures that the passeed value is of the correct datatype - age: propTypes.number
@@ -38,6 +39,7 @@ function App() {
         isLoggedIn = {true}
         username = "mlowe"
       />
+      <List />
     </>
   );
 }
