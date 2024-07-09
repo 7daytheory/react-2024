@@ -1,3 +1,5 @@
+import Card from "./Card.jsx";
+
 const HomeCards = () => {
   return (
     <section className='py-4'>
