@@ -8,6 +8,7 @@ function Card () {
                 <img alt="Profile Picture" src={profilePicture} className="profilePhoto"></img>
                 <h2 className="card-title">Card Example</h2>
                 <p className="card-text">I am a website developer and a rock climber.</p>
+                <p className="card-body">Things that don't require anything from their</p>
             </div>
         </div>
     )
