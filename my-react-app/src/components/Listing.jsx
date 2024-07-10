@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { FaMap, FaMapMarker } from 'react-icons/fa';
 
 const Listing = ( {job}) => {
   const [showFullDesc, setShowFullDesc] = useState(false);
@@ -25,7 +26,7 @@ const Listing = ( {job}) => {
 
             </div>
             <div className='text-orange-700 mb-3'>
-                <i className='fa-solid fa-location-dot text-lg'></i>
+                <FaMapMarker className="inline text-lg mb-1 mr-1" />
                 {job.location}
             </div>
             <a href={`/job/${job.id}`} className='h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg text-center text-sm'>
