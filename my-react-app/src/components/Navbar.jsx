@@ -15,7 +15,7 @@ const Navbar = () => {
             <a href="#" className='flex flex-shrink-0 items-center mr-4'>
             <img className='h-10 w-auto' src={logo} alt='React Jobs' />
               <span className='hidden md:block text-white text-2xl font-bold ml-2'>
-                React Jobs
+                Job Listings
               </span>
             </a>
             <div className='md:ml-auto'>
