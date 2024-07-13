@@ -3,14 +3,15 @@ import { Route,
         createRoutesFromElements,
         RouterProvider } 
    from 'react-router-dom';
-import Banner from "./components/Banner";
-import HomeCards from "./components/HomeCards";
-import Listings from "./components/Listings";
-import Navbar from "./components/Navbar";
-import ViewAll from "./components/ViewAll";
+   import HomePage from './pages/HomePage';
+// import Banner from "./components/Banner";
+// import HomeCards from "./components/HomeCards";
+// import Listings from "./components/Listings";
+// import Navbar from "./components/Navbar";
+// import ViewAll from "./components/ViewAll";
 
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route index element={<h1>My Page</h1>} />)
+  createRoutesFromElements(<Route index element={<HomePage />} />) //if path set to (path="/about") it will display on about page
 )
 
 
