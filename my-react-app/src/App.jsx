@@ -4,24 +4,19 @@ import { Route,
         RouterProvider } 
    from 'react-router-dom';
    import HomePage from './pages/HomePage';
-// import Banner from "./components/Banner";
-// import HomeCards from "./components/HomeCards";
-// import Listings from "./components/Listings";
-// import Navbar from "./components/Navbar";
-// import ViewAll from "./components/ViewAll";
+   import MainLayout from './layouts/MainLayout';
 
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route index element={<HomePage />} />) //if path set to (path="/about") it will display on about page
+  createRoutesFromElements(
+  <Route path='/' element={<MainLayout />}>
+    <Route index element={<HomePage />} /> //if path set to (path="/about") it will display on about page
+  </Route>
+  )
 )
 
 
 function App() {
   return <RouterProvider router={router} />;
-      {/* <Navbar />
-      <Banner />
-      <HomeCards />
-      <Listings />
-      <ViewAll /> */}
 }
 
 export default App

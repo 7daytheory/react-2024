@@ -1,8 +1,17 @@
 import React from 'react'
+import Banner from '../components/Banner';
+import HomeCards from "../components/HomeCards";
+import Listings from "../components/Listings";
+import ViewAll from "../components/ViewAll";
 
 const HomePage = () => {
   return (
-    <div>This is the index/Home page</div>
+    <>
+        <Banner />
+        <HomeCards />
+        <Listings />
+        <ViewAll /> 
+    </>
   )
 }
 
