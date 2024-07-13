@@ -5,11 +5,6 @@ import { Route,
    from 'react-router-dom';
    import HomePage from './pages/HomePage';
    import MainLayout from './layouts/MainLayout';
-// import Banner from "./components/Banner";
-// import HomeCards from "./components/HomeCards";
-// import Listings from "./components/Listings";
-// import Navbar from "./components/Navbar";
-// import ViewAll from "./components/ViewAll";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,11 +17,6 @@ const router = createBrowserRouter(
 
 function App() {
   return <RouterProvider router={router} />;
-      {/* <Navbar />
-      <Banner />
-      <HomeCards />
-      <Listings />
-      <ViewAll /> */}
 }
 
 export default App
