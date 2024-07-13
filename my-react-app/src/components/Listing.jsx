@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { FaMap, FaMapMarker } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Listing = ( {job}) => {
   const [showFullDesc, setShowFullDesc] = useState(false);
