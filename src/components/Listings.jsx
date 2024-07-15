@@ -1,8 +1,30 @@
-import jobs from '../jobs.json';
+import { useState, useEffect } from 'react';
 import Listing from './Listing';
 
 const Listings = ({ isHome = false }) => {
-    const recentJobs = isHome ? jobs.slice(0,3) : jobs;
+    //Set default jobs state to an empty array
+    const [jobs, setJobs] = useState([]);
+    
+    //Add a loading effect while jobs load
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchJobs = async () => {
+            try {
+            const res = await fetch('http://localhost:8000/jobs');
+            const data = await res.json();
+            console.log(data);
+            setJobs(data);
+            } catch (error) {
+                console.log("Error fetch data ", error);
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        fetchJobs();
+    }, []);
+
     return (
         <section className='bg-blue-50 px-4 py-10'>
           <div className='container-xl lg:container m-auto'>
@@ -10,9 +32,13 @@ const Listings = ({ isHome = false }) => {
                 {isHome ? 'Recent jobs' : 'Browse jobs'}
             </h2>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-                {recentJobs.map((job) => (
+                { loading ? (<h2>Loading...</h2>) : (
+                <>
+                {jobs.map((job) => (
                     <Listing job ={job} key={job.id} />
                 ))}
+                </>
+                )}                   
             </div>
             </div>
         </section>
