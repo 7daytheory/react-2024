@@ -1,7 +1,24 @@
-import jobs from '../jobs.json';
+import { useState, useEffect } from 'react';
 import Listing from './Listing';
 
 const Listings = ({ isHome = false }) => {
+    //Set default jobs state to an empty array
+    const [jobs, setJobs] = useState([]);
+    
+    //Add a loading effect while jobs load
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchJobs = async () => {
+            const res = await fetch('http://localhost:8000/jobs');
+            const data = await res.json();
+            console.log(data);
+            setJobs(data);
+        }
+
+        fetchJobs();
+    }, []);
+
     const recentJobs = isHome ? jobs.slice(0,3) : jobs;
     return (
         <section className='bg-blue-50 px-4 py-10'>
