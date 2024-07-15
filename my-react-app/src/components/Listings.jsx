@@ -1,8 +1,8 @@
 import jobs from '../jobs.json';
 import Listing from './Listing';
 
-const Listings = () => {
-    const recentJobs = jobs.slice(0,3);
+const Listings = ({ isHome = false }) => {
+    const recentJobs = isHome ? jobs.slice(0,3) : jobs;
     return (
         <section className='bg-blue-50 px-4 py-10'>
           <div className='container-xl lg:container m-auto'>
