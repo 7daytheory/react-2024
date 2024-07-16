@@ -1,17 +1,17 @@
-import { ClipLoader } from 'react-spinners'
-import React from 'react'
+import SquareLoader from 'react-spinners/SquareLoader'
 
-const Spinner = () => {
-  const override = {
+const override = {
     display: 'block',
-    margin: '100px auto'
+    margin: '100px auto',
   }
+  
+const Spinner = ( {loading} ) => {
   return (
-    <ClipLoader 
-        color='red'
+    <SquareLoader
+        color='#333'
         loading={loading}
         cssOverride={override}
-        size={150}
+        size={50}
     />
   )
 }
