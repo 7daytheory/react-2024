@@ -36,7 +36,7 @@ export default defineConfig({
       },
     },
   },
-});
+});     
 </code>
 
 #### How it works
