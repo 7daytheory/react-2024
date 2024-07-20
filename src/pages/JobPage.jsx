@@ -12,7 +12,6 @@ const JobPage = () => {
           try {
           const res = await fetch(`/api/jobs/${id}`);
           const data = await res.json();
-          console.log(data);
           setJob(data);
           } catch (error) {
               console.log("Error fetch data ", error);
@@ -24,7 +23,7 @@ const JobPage = () => {
     fetchJobs();
   }, [])
   return (
-    loading ? <Spinner /> : <h1>Job</h1>
+    loading ? <Spinner /> : <><h1>{job.title}</h1><p>{job.description}</p></>
   )
 }
 
