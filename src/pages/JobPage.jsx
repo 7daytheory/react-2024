@@ -1,30 +1,42 @@
-import {useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
+//import { useParams } from 'react-router-dom';
+
+import {useState} from 'react';
+import { useParams, useLoaderData } from 'react-router-dom';
 import Spinner from '../components/Spinner.jsx';
 
 const JobPage = () => {
-  const {id} = useParams();
-  const [job, setJob] = useState(null);
-  const [loading, setLoading] = useState(true);
+    const {id} = useParams();
+    const job = useLoaderData();
+    const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-      const fetchJobs = async () => {
-          try {
-          const res = await fetch(`/api/jobs/${id}`);
-          const data = await res.json();
-          setJob(data);
-          } catch (error) {
-              console.log("Error fetch data ", error);
-          } finally {
-              setLoading(false);
-          } 
-    }
+/******** Using useEffect to get data with a fetch ******/
+//   const {id} = useParams();
+//   const [job, setJob] = useState(null);
 
-    fetchJobs();
-  }, [])
-  return (
-    loading ? <Spinner /> : <><h1>{job.title}</h1><p>{job.description}</p></>
-  )
+//   useEffect(() => {
+//       const fetchJobs = async () => {
+//           try {
+//           const res = await fetch(`/api/jobs/${id}`);
+//           const data = await res.json();
+//           setJob(data);
+//           } catch (error) {
+//               console.log("Error fetch data ", error);
+//           } finally {
+//               setLoading(false);
+//           } 
+//     }
+
+//     fetchJobs();
+//   }, [])
+
+  return <><h1>{job.title}</h1><p>{job.description}</p></>
+};
+
+const jobLoader = async ({ params }) => {
+    const res = await fetch(`/api/jobs/${params.id}`);
+    const data = await res.json();
+    return data;
 }
 
-export default JobPage;
+//JobPage is default, and exporting jobLoader as well.
+export {JobPage as default, jobLoader};
