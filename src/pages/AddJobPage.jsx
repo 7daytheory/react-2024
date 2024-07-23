@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 const AddJobPage = ( { addJobSubmit} ) => {
@@ -11,6 +11,8 @@ const AddJobPage = ( { addJobSubmit} ) => {
     const [companyDesc, setCompanyDesc ] = useState('');
     const [companyEmail, setCompanyEmail ] = useState('');
     const [companyPhone, setCompanyPhone ] = useState('');
+
+    const navigate = useNavigate();
 
     const submitForm = (e) => {
       e.preventDefault();
@@ -30,7 +32,7 @@ const AddJobPage = ( { addJobSubmit} ) => {
       }
 
       addJobSubmit(newJob);
-      useNavigate
+      return navigate('/jobs');
     }
 
   return (
