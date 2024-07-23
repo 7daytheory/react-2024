@@ -1,6 +1,15 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 
 const AddJobPage = () => {
+    const [title, setTitle ] = useState('');
+    const [type, setType ] = useState('');
+    const [desc, setDesc ] = useState('');
+    const [salary, setSalary ] = useState('');
+    const [location, setLocation ] = useState('');
+    const [companyName, setCompanyName ] = useState('');
+    const [companyDesc, setCompanyDesc ] = useState('');
+    const [companyEmail, setCompanyEmail ] = useState('');
+    const [companyPhone, setCompanyPhone ] = useState('');
   return (
     <>
     <section className="bg-indigo-50">
@@ -17,6 +26,7 @@ const AddJobPage = () => {
                 className="border rounded w-full py-2 px-3"
                 required
               >
+                <option value="" selected disabled>- Please select -</option>
                 <option value="Full-Time">Full-Time</option>
                 <option value="Part-Time">Part-Time</option>
                 <option value="Remote">Remote</option>
@@ -42,7 +52,8 @@ const AddJobPage = () => {
                 name="description"
                 className="border rounded w-full py-2 px-3"
                 rows="4"
-                placeholder="Add any job duties, expectations, requirements, etc"></textarea>
+                placeholder="Add any job duties, expectations, requirements, etc"
+                required></textarea>
             </div>
 
             <div className="mb-4">
@@ -52,6 +63,7 @@ const AddJobPage = () => {
                 name="salary"
                 className="border rounded w-full py-2 px-3"
                 required>
+                <option value="" selected disabled>- Please select -</option>
                 <option value="Under $50K">Under $50K</option>
                 <option value="$50K - 60K">$50K - $60K</option>
                 <option value="$60K - 70K">$60K - $70K</option>
@@ -87,11 +99,13 @@ const AddJobPage = () => {
                 id="company"
                 name="company"
                 className="border rounded w-full py-2 px-3"
-                placeholder="Company Name"/>
+                placeholder="Company Name"
+                required
+                />
             </div>
 
             <div className="mb-4">
-              <label htmlFor="company_description" className="block text-gray-700 font-bold mb-2">Company Description *</label>
+              <label htmlFor="company_description" className="block text-gray-700 font-bold mb-2">Company Description</label>
               <textarea
                 id="company_description"
                 name="company_description"
