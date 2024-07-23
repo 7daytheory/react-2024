@@ -10,7 +10,7 @@ const AddJobPage = () => {
             <h2 className="text-3xl text-center font-semibold mb-6">Add Job</h2>
 
             <div className="mb-4">
-              <label for="type" className="block text-gray-700 font-bold mb-2">Job Type *</label>
+              <label htmlFor="type" className="block text-gray-700 font-bold mb-2">Job Type *</label>
               <select
                 id="type"
                 name="type"
@@ -25,7 +25,7 @@ const AddJobPage = () => {
             </div>
 
             <div className="mb-4">
-              <label className="block text-gray-700 font-bold mb-2">Job Listing Name *</label>
+              <label htmlFor="title" className="block text-gray-700 font-bold mb-2">Job Listing Name *</label>
               <input
                 type="text"
                 id="title"
@@ -36,9 +36,7 @@ const AddJobPage = () => {
               />
             </div>
             <div className="mb-4">
-              <label
-                for="description"
-                className="block text-gray-700 font-bold mb-2">Description *</label>
+              <label htmlFor="description" className="block text-gray-700 font-bold mb-2">Description *</label>
               <textarea
                 id="description"
                 name="description"
@@ -48,7 +46,7 @@ const AddJobPage = () => {
             </div>
 
             <div className="mb-4">
-              <label for="type" className="block text-gray-700 font-bold mb-2">Salary *</label>
+              <label htmlFor="salary" className="block text-gray-700 font-bold mb-2">Salary *</label>
               <select
                 id="salary"
                 name="salary"
@@ -69,7 +67,7 @@ const AddJobPage = () => {
             </div>
 
             <div className='mb-4'>
-              <label className='block text-gray-700 font-bold mb-2'>Location *</label>
+              <label htmlFor="location" className='block text-gray-700 font-bold mb-2'>Location *</label>
               <input
                 type='text'
                 id='location'
@@ -83,7 +81,7 @@ const AddJobPage = () => {
             <h3 className="text-2xl mb-5">Company Info</h3>
 
             <div className="mb-4">
-              <label for="company" className="block text-gray-700 font-bold mb-2">Company Name *</label>
+              <label htmlFor="company" className="block text-gray-700 font-bold mb-2">Company Name *</label>
               <input
                 type="text"
                 id="company"
@@ -93,9 +91,7 @@ const AddJobPage = () => {
             </div>
 
             <div className="mb-4">
-              <label
-                for="company_description"
-                className="block text-gray-700 font-bold mb-2">Company Description *</label>
+              <label htmlFor="company_description" className="block text-gray-700 font-bold mb-2">Company Description *</label>
               <textarea
                 id="company_description"
                 name="company_description"
@@ -105,9 +101,7 @@ const AddJobPage = () => {
             </div>
 
             <div className="mb-4">
-              <label
-                for="contact_email"
-                className="block text-gray-700 font-bold mb-2">Contact Email *</label>
+              <label htmlFor="contact_email" className="block text-gray-700 font-bold mb-2">Contact Email *</label>
               <input
                 type="email"
                 id="contact_email"
@@ -118,7 +112,7 @@ const AddJobPage = () => {
             </div>
             <div className="mb-4">
               <label
-                for="contact_phone"
+                htmlFor="contact_phone"
                 className="block text-gray-700 font-bold mb-2">Contact Phone</label>
               <input
                 type="tel"
