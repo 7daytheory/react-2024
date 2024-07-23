@@ -24,6 +24,7 @@ const AddJobPage = () => {
                 id="type"
                 name="type"
                 value={type}
+                onChange={(e) => setType(e.target.value)}
                 className="border rounded w-full py-2 px-3"
                 required
               >
@@ -42,6 +43,7 @@ const AddJobPage = () => {
                 id="title"
                 name="title"
                 value={title}
+                onChange={(e) => setTitle(e.target.value)}
                 className="border rounded w-full py-2 px-3 mb-2"
                 placeholder="eg. Beautiful Apartment In Miami"
                 required
@@ -53,6 +55,7 @@ const AddJobPage = () => {
                 id="description"
                 name="description"
                 value={desc}
+                onChange={(e) => setDesc(e.target.value)}
                 className="border rounded w-full py-2 px-3"
                 rows="4"
                 placeholder="Add any job duties, expectations, requirements, etc"
@@ -65,6 +68,7 @@ const AddJobPage = () => {
                 id="salary"
                 name="salary"
                 value={salary}
+                onChange={(e) => setSalary(e.target.value)}
                 className="border rounded w-full py-2 px-3"
                 required>
                 <option value="" selected disabled>- Please select -</option>
@@ -89,6 +93,7 @@ const AddJobPage = () => {
                 id='location'
                 name='location'
                 value={location}
+                onChange={(e) => setLocation(e.target.value)}
                 className='border rounded w-full py-2 px-3 mb-2'
                 placeholder='Company Location'
                 required           
@@ -104,6 +109,7 @@ const AddJobPage = () => {
                 id="company"
                 name="company"
                 value={companyName}
+                onChange={(e) => setCompanyName(e.target.value)}
                 className="border rounded w-full py-2 px-3"
                 placeholder="Company Name"
                 required
@@ -116,6 +122,7 @@ const AddJobPage = () => {
                 id="company_description"
                 name="company_description"
                 value={companyDesc}
+                onChange={(e) => setCompanyDesc(e.target.value)}
                 className="border rounded w-full py-2 px-3"
                 rows="4"
                 placeholder="What does your company do?"></textarea>
@@ -128,6 +135,7 @@ const AddJobPage = () => {
                 id="contact_email"
                 name="contact_email"
                 value={companyEmail}
+                onChange={(e) => setCompanyEmail(e.target.value)}
                 className="border rounded w-full py-2 px-3"
                 placeholder="Email address for applicants"
                 required />
@@ -140,7 +148,8 @@ const AddJobPage = () => {
                 type="tel"
                 id="contact_phone"
                 name="contact_phone"
-                value={companyName}
+                onChange={(e) => setCompanyPhone(e.target.value)}
+                value={companyPhone}
                 className="border rounded w-full py-2 px-3"
                 placeholder="Optional phone for applicants"
               />
