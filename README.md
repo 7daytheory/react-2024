@@ -44,4 +44,35 @@ Proxy Setup: Requests to /api are forwarded to http://localhost:8000.<br>
 Path Rewrite: The /api prefix is removed from the request path before sending it to the backend server.<br>
 Change Origin: This option ensures the origin of the host header matches the target URL.<br>
 
+### Passing a function via a prop
+Function
+<code>
+ const addJob = (newJob) => {
+    console.log(newJob);
+  }
+</code>
+Passing Function as a prop
+<code>
+<Route path='/add-job' element={<AddJobPage addJobSubmit={addJob}/>} />
+</code>
+Receiving and Using the Function in the Child Component:
+<p>In the AddJobPage component, the addJobSubmit prop is received and can be called whenever necessary, such as on form submission.</p>
+<code>
+function AddJobPage({ addJobSubmit }) {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const newJob = { /* job details */ };
+    addJobSubmit(newJob);
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      {/* form fields */}
+      <button type="submit">Add Job</button>
+    </form>
+  );
+}
+</code>
+<p>Passing and Calling a Function as a Prop in React
+In React, it's common to pass functions as props to child components so that the child components can communicate back to the parent components. This pattern is often used for event handling and data submission. Here's an example to illustrate how this works in a React application.</p>
 
