@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
-const AddJobPage = () => {
+const AddJobPage = ( { addJobSubmit} ) => {
     const [type, setType ] = useState('');
     const [title, setTitle ] = useState('');
     const [desc, setDesc ] = useState('');
@@ -28,7 +29,8 @@ const AddJobPage = () => {
         }
       }
 
-      console.log(newJob);
+      addJobSubmit(newJob);
+      useNavigate
     }
 
   return (
@@ -44,12 +46,12 @@ const AddJobPage = () => {
               <select
                 id="type"
                 name="type"
-                value={type}
+                defaultValue={type}
                 onChange={(e) => setType(e.target.value)}
                 className="border rounded w-full py-2 px-3"
                 required
               >
-                <option value="" selected disabled>- Please select -</option>
+                <option value="" disabled>- Please select -</option>
                 <option value="Full-Time">Full-Time</option>
                 <option value="Part-Time">Part-Time</option>
                 <option value="Remote">Remote</option>
@@ -88,11 +90,11 @@ const AddJobPage = () => {
               <select
                 id="salary"
                 name="salary"
-                value={salary}
+                defaultValue={salary}
                 onChange={(e) => setSalary(e.target.value)}
                 className="border rounded w-full py-2 px-3"
                 required>
-                <option value="" selected disabled>- Please select -</option>
+                <option value="" disabled>- Please select -</option>
                 <option value="Under $50K">Under $50K</option>
                 <option value="$50K - 60K">$50K - $60K</option>
                 <option value="$60K - 70K">$60K - $70K</option>
