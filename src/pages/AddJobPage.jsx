@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 
 const AddJobPage = () => {
-    const [title, setTitle ] = useState('');
     const [type, setType ] = useState('');
+    const [title, setTitle ] = useState('');
     const [desc, setDesc ] = useState('');
     const [salary, setSalary ] = useState('');
     const [location, setLocation ] = useState('');
@@ -23,6 +23,7 @@ const AddJobPage = () => {
               <select
                 id="type"
                 name="type"
+                value={type}
                 className="border rounded w-full py-2 px-3"
                 required
               >
@@ -40,6 +41,7 @@ const AddJobPage = () => {
                 type="text"
                 id="title"
                 name="title"
+                value={title}
                 className="border rounded w-full py-2 px-3 mb-2"
                 placeholder="eg. Beautiful Apartment In Miami"
                 required
@@ -50,6 +52,7 @@ const AddJobPage = () => {
               <textarea
                 id="description"
                 name="description"
+                value={desc}
                 className="border rounded w-full py-2 px-3"
                 rows="4"
                 placeholder="Add any job duties, expectations, requirements, etc"
@@ -61,6 +64,7 @@ const AddJobPage = () => {
               <select
                 id="salary"
                 name="salary"
+                value={salary}
                 className="border rounded w-full py-2 px-3"
                 required>
                 <option value="" selected disabled>- Please select -</option>
@@ -84,6 +88,7 @@ const AddJobPage = () => {
                 type='text'
                 id='location'
                 name='location'
+                value={location}
                 className='border rounded w-full py-2 px-3 mb-2'
                 placeholder='Company Location'
                 required           
@@ -98,6 +103,7 @@ const AddJobPage = () => {
                 type="text"
                 id="company"
                 name="company"
+                value={companyName}
                 className="border rounded w-full py-2 px-3"
                 placeholder="Company Name"
                 required
@@ -109,6 +115,7 @@ const AddJobPage = () => {
               <textarea
                 id="company_description"
                 name="company_description"
+                value={companyDesc}
                 className="border rounded w-full py-2 px-3"
                 rows="4"
                 placeholder="What does your company do?"></textarea>
@@ -120,6 +127,7 @@ const AddJobPage = () => {
                 type="email"
                 id="contact_email"
                 name="contact_email"
+                value={companyEmail}
                 className="border rounded w-full py-2 px-3"
                 placeholder="Email address for applicants"
                 required />
@@ -132,6 +140,7 @@ const AddJobPage = () => {
                 type="tel"
                 id="contact_phone"
                 name="contact_phone"
+                value={companyName}
                 className="border rounded w-full py-2 px-3"
                 placeholder="Optional phone for applicants"
               />
