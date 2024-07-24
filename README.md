@@ -7,6 +7,14 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+## Dependencies
+<ul>
+<li>react-icons: ^5.0.1</li>
+<li>react-router-dom: ^6.22.3</li>
+<li>react-spinners: ^0.13.8</li>
+<li>react-toastify: ^10.0.4</li>
+</ul>
+
 ### useEffect 
 <bold>useEffect(() => {}, []);</bold>
 The useEffect <bold>HOOK</bold> in React is used to perform side effects in functional components. Side effects can include things like fetching data, directly updating the DOM, and timers.<br>
