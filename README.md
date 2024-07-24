@@ -13,6 +13,8 @@ Currently, two official plugins are available:
 <li>react-router-dom: ^6.22.3</li>
 <li>react-spinners: ^0.13.8</li>
 <li>react-toastify: ^10.0.4</li>
+<li>json-server: ^1.0.0-alpha.23</li>
+<li>tailwindcss: ^3.4.1</li>
 </ul>
 
 ### useEffect 
