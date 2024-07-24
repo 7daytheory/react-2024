@@ -94,8 +94,8 @@
       "company": {
         "name": "Test",
         "description": "Test",
-        "companyEmail": "myeamil@gmail.com",
-        "companyPhone": "555-555-5555"
+        "contactEmail": "myeamil@gmail.com",
+        "contactPhone": "555-555-5555"
       }
     },
     {
@@ -108,8 +108,8 @@
       "company": {
         "name": "KC",
         "description": "Desc Test",
-        "companyEmail": "newemail@gmail.com",
-        "companyPhone": "555-555-5555"
+        "contactEmail": "newemail@gmail.com",
+        "contactPhone": "555-555-5555"
       }
     },
     {
@@ -122,8 +122,8 @@
       "company": {
         "name": "test",
         "description": "test",
-        "companyEmail": "test@newemail.com",
-        "companyPhone": "2425"
+        "contactEmail": "test@newemail.com",
+        "contactPhone": "2425"
       }
     }
   ]

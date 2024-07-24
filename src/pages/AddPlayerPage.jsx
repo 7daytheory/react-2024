@@ -9,8 +9,8 @@ const AddPlayerPage = ( { addPlayersSubmit} ) => {
     const [location, setLocation ] = useState('');
     const [companyName, setCompanyName ] = useState('');
     const [companyDesc, setCompanyDesc ] = useState('');
-    const [companyEmail, setCompanyEmail ] = useState('');
-    const [companyPhone, setCompanyPhone ] = useState('');
+    const [contactEmail, setContactEmail ] = useState('');
+    const [contactPhone, setContactPhone ] = useState('');
 
     const navigate = useNavigate();
 
@@ -26,8 +26,8 @@ const AddPlayerPage = ( { addPlayersSubmit} ) => {
         company: {
           name: companyName,
           description: desc,
-          companyEmail,
-          companyPhone,
+          contactEmail,
+          contactPhone,
         }
       }
 
@@ -159,8 +159,8 @@ const AddPlayerPage = ( { addPlayersSubmit} ) => {
                 type="email"
                 id="contact_email"
                 name="contact_email"
-                value={companyEmail}
-                onChange={(e) => setCompanyEmail(e.target.value)}
+                value={contactEmail}
+                onChange={(e) => setContactEmail(e.target.value)}
                 className="border rounded w-full py-2 px-3"
                 placeholder="Email address for applicants"
                 required />
@@ -173,8 +173,8 @@ const AddPlayerPage = ( { addPlayersSubmit} ) => {
                 type="tel"
                 id="contact_phone"
                 name="contact_phone"
-                onChange={(e) => setCompanyPhone(e.target.value)}
-                value={companyPhone}
+                onChange={(e) => setContactPhone(e.target.value)}
+                value={contactPhone}
                 className="border rounded w-full py-2 px-3"
                 placeholder="Optional phone for applicants"
               />
