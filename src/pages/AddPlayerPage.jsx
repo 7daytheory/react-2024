@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const AddJobPage = ( { addJobSubmit} ) => {
+const AddPlayerPage = ( { addPlayersSubmit} ) => {
     const [type, setType ] = useState('');
     const [title, setTitle ] = useState('');
     const [desc, setDesc ] = useState('');
@@ -17,7 +17,7 @@ const AddJobPage = ( { addJobSubmit} ) => {
     const submitForm = (e) => {
       e.preventDefault();
 
-      const newJob = {
+      const newPlayer = {
         type, /* both same value so type is = type: type, */
         title,
         description: desc,
@@ -31,8 +31,8 @@ const AddJobPage = ( { addJobSubmit} ) => {
         }
       }
 
-      addJobSubmit(newJob);
-      return navigate('/jobs');
+      addPlayersSubmit(newPlayer);
+      return navigate('/players');
     }
 
   return (
@@ -44,7 +44,7 @@ const AddJobPage = ( { addJobSubmit} ) => {
             <h2 className="text-3xl text-center font-semibold mb-6">Add Player</h2>
 
             <div className="mb-4">
-              <label htmlFor="type" className="block text-gray-700 font-bold mb-2">Job Type *</label>
+              <label htmlFor="type" className="block text-gray-700 font-bold mb-2">Player Position *</label>
               <select
                 id="type"
                 name="type"
@@ -62,7 +62,7 @@ const AddJobPage = ( { addJobSubmit} ) => {
             </div>
 
             <div className="mb-4">
-              <label htmlFor="title" className="block text-gray-700 font-bold mb-2">Job Listing Name *</label>
+              <label htmlFor="title" className="block text-gray-700 font-bold mb-2">Player Name *</label>
               <input
                 type="text"
                 id="title"
@@ -83,7 +83,7 @@ const AddJobPage = ( { addJobSubmit} ) => {
                 onChange={(e) => setDesc(e.target.value)}
                 className="border rounded w-full py-2 px-3"
                 rows="4"
-                placeholder="Add any job duties, expectations, requirements, etc"
+                placeholder="Add any duties, expectations, requirements, etc"
                 required></textarea>
             </div>
 
@@ -195,4 +195,4 @@ const AddJobPage = ( { addJobSubmit} ) => {
   )
 }
 
-export default AddJobPage
+export default AddPlayerPage

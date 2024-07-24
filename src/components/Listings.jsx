@@ -3,22 +3,22 @@ import Listing from './Listing';
 import Spinner from './Spinner';
 
 const Listings = ({ isHome = false }) => {
-    //Set default jobs state to an empty array
-    const [jobs, setJobs] = useState([]);
+    //Set default players state to an empty array
+    const [players, setPlayers] = useState([]);
     
-    //Add a loading effect while jobs load
+    //Add a loading effect while players load
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const apiUrl = isHome ? 
-          'api/jobs?_limit=3' : 
-          'api/jobs';
-        const fetchJobs = async () => {
+          'api/players?_limit=3' : 
+          'api/players';
+        const fetchPlayers = async () => {
             try {
             const res = await fetch(apiUrl);
             const data = await res.json();
             console.log(data);
-            setJobs(data);
+            setPlayers(data);
             } catch (error) {
                 console.log("Error fetch data ", error);
             } finally {
@@ -26,7 +26,7 @@ const Listings = ({ isHome = false }) => {
             }
         }
 
-        fetchJobs();
+        fetchPlayers();
     }, []);
 
     return (
@@ -40,8 +40,8 @@ const Listings = ({ isHome = false }) => {
               <Spinner loading={loading} />
             ) : (
               <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-                {jobs.map((job) => (
-                  <Listing key={job.id} job={job} />
+                {players.map((player) => (
+                  <Listing key={player.id} player={player} />
                 ))}
               </div>
             )}

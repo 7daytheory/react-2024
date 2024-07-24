@@ -14,7 +14,7 @@ const HomeCards = () => {
             <Link to="/players"
               className='inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700'
             >
-              Browse Jobs
+              View Players
             </Link>
           </Card>
           <Card bg='bg-[#FFB612]'>

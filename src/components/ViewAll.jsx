@@ -7,7 +7,7 @@ const ViewAll = () => {
         to='/players'
         className='block bg-[#E31837] text-white text-center py-4 px-6 rounded-xl hover:bg-[#E33437]'
       >
-        View All Jobs
+        View All Players
       </Link>
     </section>
   )
