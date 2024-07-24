@@ -14,7 +14,7 @@ const JobPage = ( {deleteJob}) => {
 
     deleteJob(jobId);
 
-    navigate('/jobs');
+    navigate('/players');
   }
 
   return ( 
@@ -22,9 +22,9 @@ const JobPage = ( {deleteJob}) => {
     <section>
       <div className="container m-auto py-6 px-6">
         <Link
-          to='/jobs'
+          to='/players'
           className="text-indigo-500 hover:text-indigo-600 flex items-center">
-          <FaArrowLeft className="mr-2" />Back to Job Listings
+          <FaArrowLeft className="mr-2" />Back to Players Page
         </Link>
       </div>
     </section>
@@ -46,7 +46,7 @@ const JobPage = ( {deleteJob}) => {
 
             <div className="bg-white p-6 rounded-lg shadow-md mt-6">
               <h3 className="text-indigo-800 text-lg font-bold mb-6">
-                Job Description
+                Player Information
               </h3>
 
               <p className="mb-4">
@@ -84,7 +84,7 @@ const JobPage = ( {deleteJob}) => {
             <div className="bg-white p-6 rounded-lg shadow-md mt-6">
               <h3 className="text-xl font-bold mb-6">Manage Job</h3>
               <Link
-                to={`jobs/edit/${job.id}`}
+                to={`players/edit/${job.id}`}
                 className="bg-indigo-500 hover:bg-indigo-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block" >Edit Job</Link>
               <button
                 onClick={() => {onDeleteClick(job.id)}}
@@ -100,11 +100,11 @@ const JobPage = ( {deleteJob}) => {
   );
 };
 
-const jobLoader = async ({ params }) => {
+const playerLoader = async ({ params }) => {
     const res = await fetch(`/api/jobs/${params.id}`);
     const data = await res.json();
     return data;
 }
 
 //JobPage is default, and exporting jobLoader as well.
-export {JobPage as default, jobLoader}
+export {JobPage as default, playerLoader}
