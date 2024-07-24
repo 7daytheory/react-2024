@@ -47,30 +47,30 @@ Change Origin: This option ensures the origin of the host header matches the tar
 ### Passing a function via a prop
 Function
 <code>
- const addJob = (newJob) => {
-    console.log(newJob);
+ const addplayer = (newplayer) => {
+    console.log(newplayer);
   }
 </code>
 
 Passing Function as a prop
 
 <code>
-<Route path='/add-job' element={<AddJobPage addJobSubmit={addJob}/>} />
+<Route path='/add-player' element={<AddplayerPage addPlayerSubmit={addPlayer}/>} />
 </code>
 
 <p>Receiving and Using the Function in the Child Component:<br>
-In the AddJobPage component, the addJobSubmit prop is received and can be called whenever necessary, such as on form submission.</p>
+In the AddplayerPage component, the addPlayerSubmit prop is received and can be called whenever necessary, such as on form submission.</p>
 <code>
-function AddJobPage({ addJobSubmit }) {
+function AddplayerPage({ addPlayerSubmit }) {
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newJob = { /* job details */ };
-    addJobSubmit(newJob);
+    const newplayer = { /* player details */ };
+    addPlayerSubmit(newplayer);
   }
   return (
     <form onSubmit={handleSubmit}>
       {/* form fields */}
-      <button type="submit">Add Job</button>
+      <button type="submit">Add player</button>
     </form>
   );
 }
