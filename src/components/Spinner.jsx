@@ -8,7 +8,7 @@ const override = {
 const Spinner = ( {loading} ) => {
   return (
     <SquareLoader
-        color='#333'
+        color="#E31837"
         loading={loading}
         cssOverride={override}
         size={50}

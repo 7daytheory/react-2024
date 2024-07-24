@@ -12,20 +12,21 @@
 
 
 function App() {
-  const addJob = async (newJob) => {
-      const res = await fetch('/api/jobs', {
+  //Add Player
+  const addPlayer = async (newPlayer) => {
+      const res = await fetch('/api/players', {
         method: 'POST',
         headers: {
           'Content-type': 'application-json'
         },
-        body: JSON.stringify(newJob),
+        body: JSON.stringify(newPlayer),
       })
       return;
   }
 
-//Delete Job
-const deleteJob = async (id) => {
-  const res = await fetch(`/api/jobs/${id}`, {
+//Delete Player
+const deletePlayer = async (id) => {
+  const res = await fetch(`/api/players/${id}`, {
     method: 'DELETE',
   })
   return;
@@ -36,8 +37,8 @@ const router = createBrowserRouter(
   <Route path='/' element={<MainLayout />}>
     <Route index element={<HomePage />} />
     <Route path='/players' element={<PlayersPage />} />
-    <Route path='/add-player' element={<AddPlayerPage addJobSubmit={addJob}/>} />
-    <Route path='/players/:id' element={<PlayerPage deleteJob={ deleteJob }/>} loader={playerLoader} />
+    <Route path='/add-player' element={<AddPlayerPage addPlayersSubmit={addPlayer}/>} />
+    <Route path='/players/:id' element={<PlayerPage deletePlayer={ deletePlayer }/>} loader={playerLoader} />
     <Route path='*' element={<NotFound />} />
   </Route>
   )
