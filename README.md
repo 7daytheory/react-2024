@@ -51,12 +51,15 @@ Function
     console.log(newJob);
   }
 </code>
+
 Passing Function as a prop
+
 <code>
 <Route path='/add-job' element={<AddJobPage addJobSubmit={addJob}/>} />
 </code>
-Receiving and Using the Function in the Child Component:
-<p>In the AddJobPage component, the addJobSubmit prop is received and can be called whenever necessary, such as on form submission.</p>
+
+<p>Receiving and Using the Function in the Child Component:<br>
+In the AddJobPage component, the addJobSubmit prop is received and can be called whenever necessary, such as on form submission.</p>
 <code>
 function AddJobPage({ addJobSubmit }) {
   const handleSubmit = (event) => {
@@ -64,7 +67,6 @@ function AddJobPage({ addJobSubmit }) {
     const newJob = { /* job details */ };
     addJobSubmit(newJob);
   }
-
   return (
     <form onSubmit={handleSubmit}>
       {/* form fields */}
