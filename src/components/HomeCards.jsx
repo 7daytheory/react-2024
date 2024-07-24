@@ -17,14 +17,14 @@ const HomeCards = () => {
               Browse Jobs
             </Link>
           </Card>
-          <Card bg='bg-red-300'>
-            <h2 className='text-2xl font-bold'>For Members</h2>
-            <p className='mt-2 mb-4'>
+          <Card bg='bg-[#FFB612]'>
+            <h2 className='text-white text-2xl font-bold'>For Staff</h2>
+            <p className='text-white mt-2 mb-4'>
               Update/Add players to the roster
             </p>
             <Link to="/add-player"
               className='inline-block bg-[#E31837] text-white rounded-lg px-4 py-2 hover:bg-[#E33846]'>
-              Add Job
+              Add Player
             </Link>
           </Card>
         </div>
