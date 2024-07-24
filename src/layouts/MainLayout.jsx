@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import NavBar from '../components/Navbar';
 
-//Outlet servers as a palceholder for child routes within the parent route - currently displaying the Banner from App.jsx
+//Outlet servers as a placeholder for child routes within the parent route - displaying everything except navbar
 const MainLayout = () => {
   return (
     <>
