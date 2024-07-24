@@ -7,6 +7,16 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+## Dependencies
+<ul>
+<li>react-icons: ^5.0.1</li>
+<li>react-router-dom: ^6.22.3</li>
+<li>react-spinners: ^0.13.8</li>
+<li>react-toastify: ^10.0.4</li>
+<li>json-server: ^1.0.0-alpha.23</li>
+<li>tailwindcss: ^3.4.1</li>
+</ul>
+
 ### useEffect 
 <bold>useEffect(() => {}, []);</bold>
 The useEffect <bold>HOOK</bold> in React is used to perform side effects in functional components. Side effects can include things like fetching data, directly updating the DOM, and timers.<br>
@@ -47,30 +57,30 @@ Change Origin: This option ensures the origin of the host header matches the tar
 ### Passing a function via a prop
 Function
 <code>
- const addJob = (newJob) => {
-    console.log(newJob);
+ const addplayer = (newplayer) => {
+    console.log(newplayer);
   }
 </code>
 
 Passing Function as a prop
 
 <code>
-<Route path='/add-job' element={<AddJobPage addJobSubmit={addJob}/>} />
+<Route path='/add-player' element={<AddplayerPage addPlayerSubmit={addPlayer}/>} />
 </code>
 
 <p>Receiving and Using the Function in the Child Component:<br>
-In the AddJobPage component, the addJobSubmit prop is received and can be called whenever necessary, such as on form submission.</p>
+In the AddplayerPage component, the addPlayerSubmit prop is received and can be called whenever necessary, such as on form submission.</p>
 <code>
-function AddJobPage({ addJobSubmit }) {
+function AddplayerPage({ addPlayerSubmit }) {
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newJob = { /* job details */ };
-    addJobSubmit(newJob);
+    const newplayer = { /* player details */ };
+    addPlayerSubmit(newplayer);
   }
   return (
     <form onSubmit={handleSubmit}>
       {/* form fields */}
-      <button type="submit">Add Job</button>
+      <button type="submit">Add player</button>
     </form>
   );
 }
