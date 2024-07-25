@@ -19,7 +19,7 @@ const Listing = ( {player}) => {
             <div className='mb-5'>
                 <img src={headshot} alt="User HeadShot" className="flex justify-center mb-2 mt-2"/>
             </div>
-            <button onClick={() => setShowMore((prevState) => !prevState)} className="text-indigo-500 mb-5 hover:text-indigo-600">Show {showMore ? 'less' : 'more'}</button>
+            <button onClick={() => setShowMore((prevState) => !prevState)} className="text-red-500 mb-5 hover:text-red-600">Show {showMore ? 'less' : 'more'}</button>
             {showMore && (
               <div id="moreInfo">
                 <h3 className='text-gray-600 mb-2'>Height : {player.Height}</h3>
