@@ -2,15 +2,21 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 const AddPlayerPage = ( { addPlayersSubmit} ) => {
-    const [type, setType ] = useState('');
-    const [title, setTitle ] = useState('');
-    const [desc, setDesc ] = useState('');
-    const [salary, setSalary ] = useState('');
-    const [location, setLocation ] = useState('');
-    const [companyName, setCompanyName ] = useState('');
-    const [companyDesc, setCompanyDesc ] = useState('');
-    const [contactEmail, setContactEmail ] = useState('');
-    const [contactPhone, setContactPhone ] = useState('');
+  const [PlayerID, setPlayerID] = useState('');
+  const [Team, setTeam] = useState('');
+  const [PlayerNumber, setPlayerNumber] = useState(''); // Change from Number to PlayerNumber
+  const [FirstName, setFirstName] = useState('');
+  const [LastName, setLastName] = useState('');
+  const [Position, setPosition] = useState('');
+  const [Status, setStatus] = useState('');
+  const [Height, setHeight] = useState('');
+  const [Weight, setWeight] = useState('');
+  const [BirthDate, setBirthDate] = useState('');
+  const [College, setCollege] = useState('');
+  const [Experience, setExperience] = useState('');
+  const [Name, setName] = useState('');
+  const [Age, setAge] = useState('');
+  const [ShortName, setShortName] = useState('');
 
     const navigate = useNavigate();
 
@@ -18,18 +24,22 @@ const AddPlayerPage = ( { addPlayersSubmit} ) => {
       e.preventDefault();
 
       const newPlayer = {
-        type, /* both same value so type is = type: type, */
-        title,
-        description: desc,
-        salary,
-        location,
-        company: {
-          name: companyName,
-          description: desc,
-          contactEmail,
-          contactPhone,
-        }
-      }
+        PlayerID,
+        Team,
+        Number: PlayerNumber, // Number is an already used keyword so first assign it to PlayerNumber and change it back to Number here
+        FirstName,
+        LastName,
+        Position,
+        Status,
+        Height,
+        Weight,
+        BirthDate,
+        College,
+        Experience,
+        Name,
+        Age,
+        ShortName,
+      };
 
       addPlayersSubmit(newPlayer);
       return navigate('/players');

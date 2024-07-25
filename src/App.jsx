@@ -10,16 +10,6 @@
   import PlayerPage, { playerLoader } from './pages/PlayerPage';
   import AddPlayerPage from './pages/AddPlayerPage';
 
-  /*** If changing to the sportsdata.io api that gets live data from a db of the players in the NFL */
-
-  //You can remove json-server from packages as it won't be used and remove the players.json file
-
-  //Create an .env file and store api key
-  //Define API Url and get api key from .env file 
-  const apiKey = import.meta.env.VITE_SPORTS_DATA_API_KEY;
-  const apiUrl = `https://api.sportsdata.io/v3/nfl/scores/json/PlayersBasic/KC?key=${apiKey}`;
-  //Apply apiUrl to where /api/players were - but it's read only so I can't have add/edit/delete pages just for show
-
 function App() {
   //Add Player
   const addPlayer = async (newPlayer) => {
