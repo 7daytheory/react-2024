@@ -15,7 +15,7 @@ const playerPage = ( {deletePlayer}) => {
     navigate('/players');
   }
 
-  return ( 
+  return (
     <>
     <section>
       <div className="container m-auto py-6 px-6">
@@ -33,60 +33,44 @@ const playerPage = ( {deletePlayer}) => {
           <main>
             <div className="bg-white p-6 rounded-lg shadow-md text-center md:text-left">
               <div className="text-gray-500 mb-4">{player.type}</div>
-              <h1 className="text-3xl font-bold mb-4">
-                {player.title}
-              </h1>
+              <h1 className="text-3xl font-bold mb-4">{player.Name}</h1>
               <div className="text-gray-500 mb-4 flex align-middle justify-center md:justify-start">
                 <FaMapMarker className="text-lg text-orange-700 mr-2" />
-                <p className="text-orange-700">{player.location}</p>
+                <p className="text-orange-700">{player.Team}</p>
               </div>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md mt-6">
-              <h3 className="text-indigo-800 text-lg font-bold mb-6">
-                Player Information
-              </h3>
-
-              <p className="mb-4">
-               {player.description}
-              </p>
-
-              <h3 className="text-indigo-800 text-lg font-bold mb-2">Salary</h3>
-
-              <p className="mb-4">{player.salary} / Year</p>
+              <h3 className="text-indigo-800 text-lg font-bold mb-6">Player Information</h3>
+              
+              <p className="mb-4"><strong>Player ID:</strong> {player.PlayerID}</p>
+              <p className="mb-4"><strong>Number:</strong> {player.Number}</p>
+              <p className="mb-4"><strong>First Name:</strong> {player.FirstName}</p>
+              <p className="mb-4"><strong>Last Name:</strong> {player.LastName}</p>
+              <p className="mb-4"><strong>Position:</strong> {player.Position}</p>
+              <p className="mb-4"><strong>Status:</strong> {player.Status}</p>
+              <p className="mb-4"><strong>Height:</strong> {player.Height}</p>
+              <p className="mb-4"><strong>Weight:</strong> {player.Weight}</p>
+              <p className="mb-4"><strong>Birth Date:</strong> {player.BirthDate}</p>
+              <p className="mb-4"><strong>College:</strong> {player.College}</p>
+              <p className="mb-4"><strong>Experience:</strong> {player.Experience}</p>
+              <p className="mb-4"><strong>Age:</strong> {player.Age}</p>
+              <p className="mb-4"><strong>Short Name:</strong> {player.ShortName}</p>
             </div>
           </main>
           <aside>
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-bold mb-6">Company Info</h3>
-
-              <h2 className="text-2xl">{player.company.name}</h2>
-
-              <p className="my-2">
-                {player.company.description}
-              </p>
-
-              <hr className="my-4" />
-
-              <h3 className="text-xl">Contact Email:</h3>
-
-              <p className="my-2 bg-indigo-100 p-2 font-bold">
-                {player.company.contactEmail}
-              </p>
-
-              <h3 className="text-xl">Contact Phone:</h3>
-
-              <p className="my-2 bg-indigo-100 p-2 font-bold">{player.company.contactPhone}</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md mt-6">
               <h3 className="text-xl font-bold mb-6">Manage Player</h3>
               <Link
-                to={`players/edit/${player.id}`}
-                className="bg-indigo-500 hover:bg-indigo-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block" >Edit player</Link>
+                to={`/players/edit/${player.PlayerID}`}
+                className="bg-indigo-500 hover:bg-indigo-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
+              >
+                Edit Player
+              </Link>
               <button
-                onClick={() => {onDeleteClick(player.id)}}
-                className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
+                onClick={() => onDeleteClick(player.PlayerID)}
+                className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
+              >
                 Delete Player
               </button>
             </div>
