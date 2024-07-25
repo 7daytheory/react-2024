@@ -21,7 +21,7 @@ const playerPage = ( {deletePlayer}) => {
       <div className="container m-auto py-6 px-6">
         <Link
           to='/players'
-          className="text-[#FFB612] hover:text-[#F7A600]  flex items-center">
+          className="text-[#E31837] hover:text-[#D10F2E]  flex items-center">
           <FaArrowLeft className="mr-2" />Back to Players Page
         </Link>
       </div>
@@ -43,7 +43,6 @@ const playerPage = ( {deletePlayer}) => {
             <div className="bg-white p-6 rounded-lg shadow-md mt-6">
               <h3 className="text-[#E31837] text-lg font-bold mb-6">Player Information</h3>
               
-              <p className="mb-4"><strong>Player ID:</strong> {player.PlayerID}</p>
               <p className="mb-4"><strong>Number:</strong> {player.Number}</p>
               <p className="mb-4"><strong>First Name:</strong> {player.FirstName}</p>
               <p className="mb-4"><strong>Last Name:</strong> {player.LastName}</p>

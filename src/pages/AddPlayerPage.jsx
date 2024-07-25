@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 const AddPlayerPage = ( { addPlayersSubmit} ) => {
-  const [PlayerID, setPlayerID] = useState('');
   const [Team, setTeam] = useState('');
   const [PlayerNumber, setPlayerNumber] = useState(''); // Change from Number to PlayerNumber
   const [FirstName, setFirstName] = useState('');
@@ -24,7 +23,6 @@ const AddPlayerPage = ( { addPlayersSubmit} ) => {
       e.preventDefault();
 
       const newPlayer = {
-        PlayerID,
         Team,
         Number: PlayerNumber, // Number is an already used keyword so first assign it to PlayerNumber and change it back to Number here
         FirstName,
@@ -52,18 +50,6 @@ const AddPlayerPage = ( { addPlayersSubmit} ) => {
           <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
             <form onSubmit={submitForm}>
               <h2 className="text-3xl text-center font-semibold mb-6">Add Player</h2>
-    
-              <div className="mb-4">
-                <label htmlFor="PlayerID" className="block text-gray-700 font-bold mb-2">Player ID *</label>
-                <input
-                  type="text"
-                  id="PlayerID"
-                  value={PlayerID}
-                  onChange={(e) => setPlayerID(e.target.value)}
-                  className="border rounded w-full py-2 px-3"
-                  required
-                />
-              </div>
 
               <div className="mb-4">
                 <label htmlFor="Team" className="block text-gray-700 font-bold mb-2">Team *</label>
