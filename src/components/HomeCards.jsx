@@ -23,7 +23,7 @@ const HomeCards = () => {
               Update/Add players to the roster
             </p>
             <Link to="/add-player"
-              className='inline-block bg-[#E31837] text-[#FFB612] font-bold rounded-lg px-4 py-2 hover:bg-[#E33846]'>
+              className='inline-block bg-[#E31837] hover:bg-[#D10F2E] text-[#FFB612] font-bold rounded-lg px-4 py-2'>
               Add Player
             </Link>
           </Card>

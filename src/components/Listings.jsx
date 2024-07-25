@@ -11,7 +11,7 @@ const Listings = ({ isHome = false }) => {
 
     useEffect(() => {
         const apiUrl = isHome ? 
-          'api/players?_limit=3' : 
+          'api/players?_limit=6' : 
           'api/players';
         const fetchPlayers = async () => {
             try {
@@ -30,7 +30,7 @@ const Listings = ({ isHome = false }) => {
     }, []);
 
     return (
-        <section className='bg-blue-50 px-4 py-10'>
+        <section className='bg-red-50 px-4 py-10'>
           <div className='container-xl lg:container m-auto'>
             <h2 className='text-3xl font-bold text-[#E31837] mb-6 text-center'>
               {isHome ? 'Popular Players' : 'All Players'}

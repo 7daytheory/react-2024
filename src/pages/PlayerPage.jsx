@@ -21,13 +21,13 @@ const playerPage = ( {deletePlayer}) => {
       <div className="container m-auto py-6 px-6">
         <Link
           to='/players'
-          className="text-indigo-500 hover:text-indigo-600 flex items-center">
+          className="text-[#FFB612] hover:text-[#F7A600]  flex items-center">
           <FaArrowLeft className="mr-2" />Back to Players Page
         </Link>
       </div>
     </section>
 
-    <section className="bg-indigo-50">
+    <section className="bg-red-50">
       <div className="container m-auto py-10 px-6">
         <div className="grid grid-cols-1 md:grid-cols-70/30 w-full gap-6">
           <main>
@@ -41,7 +41,7 @@ const playerPage = ( {deletePlayer}) => {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md mt-6">
-              <h3 className="text-indigo-800 text-lg font-bold mb-6">Player Information</h3>
+              <h3 className="text-[#E31837] text-lg font-bold mb-6">Player Information</h3>
               
               <p className="mb-4"><strong>Player ID:</strong> {player.PlayerID}</p>
               <p className="mb-4"><strong>Number:</strong> {player.Number}</p>
@@ -63,13 +63,13 @@ const playerPage = ( {deletePlayer}) => {
               <h3 className="text-xl font-bold mb-6">Manage Player</h3>
               <Link
                 to={`/players/edit/${player.PlayerID}`}
-                className="bg-indigo-500 hover:bg-indigo-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
+                className="bg-[#FFB612] hover:bg-[#F7A600] text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
               >
                 Edit Player
               </Link>
               <button
                 onClick={() => onDeleteClick(player.PlayerID)}
-                className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
+                className="bg-[#E31837] hover:bg-[#D10F2E] text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
               >
                 Delete Player
               </button>
