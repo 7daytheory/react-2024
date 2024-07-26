@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
-const AddPlayerPage = ( { addPlayersSubmit} ) => {
+const AddPlayerPage = ( { addPlayersSubmit} ) => {  
   const [Team, setTeam] = useState('');
   const [PlayerNumber, setPlayerNumber] = useState(''); // Change from Number to PlayerNumber
   const [FirstName, setFirstName] = useState('');
@@ -40,6 +41,9 @@ const AddPlayerPage = ( { addPlayersSubmit} ) => {
       };
 
       addPlayersSubmit(newPlayer);
+
+      toast.success('Job added successfully!');
+
       return navigate('/players');
     }
 
