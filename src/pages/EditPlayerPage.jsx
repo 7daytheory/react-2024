@@ -44,8 +44,6 @@ const EditPlayerPage = ( {updatePlayerSubmit }) => {
           };
     
           updatePlayerSubmit(updatedPlayer);
-
-          console.log(updatedPlayer);
     
           toast.success('Player Updated successfully!');
     
