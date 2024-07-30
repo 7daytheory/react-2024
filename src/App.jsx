@@ -9,6 +9,7 @@
   import NotFound from './pages/NotFound';
   import PlayerPage, { playerLoader } from './pages/PlayerPage';
   import AddPlayerPage from './pages/AddPlayerPage';
+  import EditPlayerPage from './pages/EditPlayerPage';
 
 function App() {
   //Add Player
@@ -37,7 +38,14 @@ const router = createBrowserRouter(
     <Route index element={<HomePage />} />
     <Route path='/players' element={<PlayersPage />} />
     <Route path='/add-player' element={<AddPlayerPage addPlayersSubmit={addPlayer}/>} />
-    <Route path='/players/:id' element={<PlayerPage deletePlayer={ deletePlayer }/>} loader={playerLoader} />
+    <Route path='/players/:id' 
+      element={<PlayerPage deletePlayer={ deletePlayer }/>} 
+      loader={playerLoader} 
+      />
+    <Route path='/edit-player/:id' 
+    element={<EditPlayerPage />} 
+    loader={playerLoader} 
+    />
     <Route path='*' element={<NotFound />} />
   </Route>
   )
