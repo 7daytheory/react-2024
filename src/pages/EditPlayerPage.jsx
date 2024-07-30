@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { useLoaderData, useParams, useNavigate } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
-const EditPlayerPage = () => {
+const EditPlayerPage = ( {updatePlayerSubmit }) => {
     const player = useLoaderData();
+    const navigate = useNavigate();
 
     const [Team, setTeam] = useState(player.Team);
     const [PlayerNumber, setPlayerNumber] = useState(player.PlayerNumber); // Change from Number to PlayerNumber
@@ -21,8 +23,31 @@ const EditPlayerPage = () => {
 
     const submitForm = (e) => {
         e.preventDefault();
-  
-        console.log("form submitted!");
+        
+        const updatedPlayer = {
+            PlayerId,
+            Team,
+            Number: PlayerNumber, // Number is an already used keyword so first assign it to PlayerNumber and change it back to Number here
+            FirstName,
+            LastName,
+            Position,
+            Status,
+            Height,
+            Weight,
+            BirthDate,
+            College,
+            Experience,
+            Name,
+            Age,
+            ShortName,
+            id,
+          };
+    
+          updatePlayerSubmit(updatedPlayer);
+    
+          toast.success('Player Updated successfully!');
+    
+          return navigate(`players/${id}`);
       }
 
   return (

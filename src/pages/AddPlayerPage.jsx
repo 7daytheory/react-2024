@@ -42,7 +42,7 @@ const AddPlayerPage = ( { addPlayersSubmit} ) => {
 
       addPlayersSubmit(newPlayer);
 
-      toast.success('Job added successfully!');
+      toast.success('Played added successfully!');
 
       return navigate('/players');
     }
