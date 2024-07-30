@@ -1,6 +1,9 @@
+import { useLoaderData, useParams, useNavigate } from 'react-router-dom';
+
 const EditPlayerPage = () => {
+    const player = useLoaderData();
   return (
-    <div>EditPlayerPage</div>
+    <div>{player.FirstName} {player.LastName}</div>
   )
 }
 
