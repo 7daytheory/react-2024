@@ -32,6 +32,18 @@ const deletePlayer = async (id) => {
   return;
 }
 
+//Update Player
+const updatePlayer = async (player) => {
+  const res = await fetch(`/api/players/${job.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-type': 'application-json'
+    },
+    body: JSON.stringify(player),
+  })
+  return;
+}
+
 const router = createBrowserRouter(
   createRoutesFromElements(
   <Route path='/' element={<MainLayout />}>
@@ -43,7 +55,7 @@ const router = createBrowserRouter(
       loader={playerLoader} 
       />
     <Route path='/edit-player/:id' 
-    element={<EditPlayerPage />} 
+    element={<EditPlayerPage updatePlayerSubmit={updatePlayer}/>} 
     loader={playerLoader} 
     />
     <Route path='*' element={<NotFound />} />

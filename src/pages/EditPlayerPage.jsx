@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import { useParams, useLoaderData, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const EditPlayerPage = ( {updatePlayerSubmit }) => {
     const player = useLoaderData();
     const navigate = useNavigate();
+    const { PlayerId, id } = useParams();
 
     const [Team, setTeam] = useState(player.Team);
     const [PlayerNumber, setPlayerNumber] = useState(player.PlayerNumber); // Change from Number to PlayerNumber
@@ -23,7 +24,7 @@ const EditPlayerPage = ( {updatePlayerSubmit }) => {
 
     const submitForm = (e) => {
         e.preventDefault();
-        
+
         const updatedPlayer = {
             PlayerId,
             Team,
@@ -44,10 +45,12 @@ const EditPlayerPage = ( {updatePlayerSubmit }) => {
           };
     
           updatePlayerSubmit(updatedPlayer);
+
+          console.log(updatedPlayer);
     
           toast.success('Player Updated successfully!');
     
-          return navigate(`players/${id}`);
+          return navigate(`/players/${id}`);
       }
 
   return (
@@ -70,14 +73,13 @@ const EditPlayerPage = ( {updatePlayerSubmit }) => {
               </div>
 
               <div className="mb-4">
-                <label htmlFor="PlayerNumber" className="block text-gray-700 font-bold mb-2">Player Number *</label>
+                <label htmlFor="PlayerNumber" className="block text-gray-700 font-bold mb-2">Player Number</label>
                 <input
                   type="text"
                   id="PlayerNumber"
                   value={PlayerNumber}
                   onChange={(e) => setPlayerNumber(e.target.value)}
                   className="border rounded w-full py-2 px-3"
-                  required
                 />
               </div>
 
@@ -154,38 +156,35 @@ const EditPlayerPage = ( {updatePlayerSubmit }) => {
               </div>
 
               <div className="mb-4">
-                <label htmlFor="BirthDate" className="block text-gray-700 font-bold mb-2">Birth Date *</label>
+                <label htmlFor="BirthDate" className="block text-gray-700 font-bold mb-2">Birth Date</label>
                 <input
                   type="date"
                   id="BirthDate"
                   value={BirthDate}
                   onChange={(e) => setBirthDate(e.target.value)}
                   className="border rounded w-full py-2 px-3"
-                  required
                 />
               </div>
 
               <div className="mb-4">
-                <label htmlFor="College" className="block text-gray-700 font-bold mb-2">College *</label>
+                <label htmlFor="College" className="block text-gray-700 font-bold mb-2">College</label>
                 <input
                   type="text"
                   id="College"
                   value={College}
                   onChange={(e) => setCollege(e.target.value)}
                   className="border rounded w-full py-2 px-3"
-                  required
                 />
               </div>
 
               <div className="mb-4">
-                <label htmlFor="Experience" className="block text-gray-700 font-bold mb-2">Experience *</label>
+                <label htmlFor="Experience" className="block text-gray-700 font-bold mb-2">Experience</label>
                 <input
                   type="text"
                   id="Experience"
                   value={Experience}
                   onChange={(e) => setExperience(e.target.value)}
                   className="border rounded w-full py-2 px-3"
-                  required
                 />
               </div>
 
@@ -229,7 +228,7 @@ const EditPlayerPage = ( {updatePlayerSubmit }) => {
                 <button
                   className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                   type="submit">
-                  Add Player
+                  Update
                 </button>
               </div>
             </form>
