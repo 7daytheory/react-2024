@@ -56,7 +56,7 @@ const AddPlayerPage = ( { addPlayersSubmit} ) => {
               <h2 className="text-3xl text-center font-semibold mb-6">Add Player</h2>
 
               <div className="mb-4">
-                <label htmlFor="Team" className="block text-gray-700 font-bold mb-2">Team *</label>
+              <label htmlFor="Team" className="block text-gray-700 font-bold mb-2">Team *</label>
                 <input
                   type="text"
                   id="Team"
@@ -68,14 +68,13 @@ const AddPlayerPage = ( { addPlayersSubmit} ) => {
               </div>
 
               <div className="mb-4">
-                <label htmlFor="PlayerNumber" className="block text-gray-700 font-bold mb-2">Player Number *</label>
+                <label htmlFor="PlayerNumber" className="block text-gray-700 font-bold mb-2">Player Number</label>
                 <input
                   type="text"
                   id="PlayerNumber"
                   value={PlayerNumber}
                   onChange={(e) => setPlayerNumber(e.target.value)}
                   className="border rounded w-full py-2 px-3"
-                  required
                 />
               </div>
 
@@ -152,38 +151,35 @@ const AddPlayerPage = ( { addPlayersSubmit} ) => {
               </div>
 
               <div className="mb-4">
-                <label htmlFor="BirthDate" className="block text-gray-700 font-bold mb-2">Birth Date *</label>
+                <label htmlFor="BirthDate" className="block text-gray-700 font-bold mb-2">Birth Date</label>
                 <input
                   type="date"
                   id="BirthDate"
                   value={BirthDate}
                   onChange={(e) => setBirthDate(e.target.value)}
                   className="border rounded w-full py-2 px-3"
-                  required
                 />
               </div>
 
               <div className="mb-4">
-                <label htmlFor="College" className="block text-gray-700 font-bold mb-2">College *</label>
+                <label htmlFor="College" className="block text-gray-700 font-bold mb-2">College</label>
                 <input
                   type="text"
                   id="College"
                   value={College}
                   onChange={(e) => setCollege(e.target.value)}
                   className="border rounded w-full py-2 px-3"
-                  required
                 />
               </div>
 
               <div className="mb-4">
-                <label htmlFor="Experience" className="block text-gray-700 font-bold mb-2">Experience *</label>
+                <label htmlFor="Experience" className="block text-gray-700 font-bold mb-2">Experience</label>
                 <input
                   type="text"
                   id="Experience"
                   value={Experience}
                   onChange={(e) => setExperience(e.target.value)}
                   className="border rounded w-full py-2 px-3"
-                  required
                 />
               </div>
 
