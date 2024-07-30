@@ -1,54 +1,58 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useParams, useLoaderData, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-const AddPlayerPage = ( { addPlayersSubmit} ) => {  
-  const [Team, setTeam] = useState('');
-  const [PlayerNumber, setPlayerNumber] = useState(''); // Change from Number to PlayerNumber
-  const [FirstName, setFirstName] = useState('');
-  const [LastName, setLastName] = useState('');
-  const [Position, setPosition] = useState('');
-  const [Status, setStatus] = useState('');
-  const [Height, setHeight] = useState('');
-  const [Weight, setWeight] = useState('');
-  const [BirthDate, setBirthDate] = useState('');
-  const [College, setCollege] = useState('');
-  const [Experience, setExperience] = useState('');
-  const [Name, setName] = useState('');
-  const [Age, setAge] = useState('');
-  const [ShortName, setShortName] = useState('');
-
+const EditPlayerPage = ( {updatePlayerSubmit }) => {
+    const player = useLoaderData();
     const navigate = useNavigate();
+    const { id } = useParams();
+
+    const [Team, setTeam] = useState(player.Team);
+    const [PlayerNumber, setPlayerNumber] = useState(player.Number);
+    const [FirstName, setFirstName] = useState(player.FirstName);
+    const [LastName, setLastName] = useState(player.LastName);
+    const [Position, setPosition] = useState(player.Position);
+    const [Status, setStatus] = useState(player.Status);
+    const [Height, setHeight] = useState(player.Height);
+    const [Weight, setWeight] = useState(player.Weight);
+    const [BirthDate, setBirthDate] = useState(player.BirthDate);
+    const [College, setCollege] = useState(player.College);
+    const [Experience, setExperience] = useState(player.Experience);
+    const [Name, setName] = useState(player.Name);
+    const [Age, setAge] = useState(player.Age);
+    const [ShortName, setShortName] = useState(player.ShortName);
 
     const submitForm = (e) => {
-      e.preventDefault();
+        e.preventDefault();
 
-      const newPlayer = {
-        Team,
-        Number: PlayerNumber, // Number is an already used keyword so first assign it to PlayerNumber and change it back to Number here
-        FirstName,
-        LastName,
-        Position,
-        Status,
-        Height,
-        Weight,
-        BirthDate,
-        College,
-        Experience,
-        Name,
-        Age,
-        ShortName,
-      };
+        const updatedPlayer = {
+            Team,
+            Number: PlayerNumber, // Number is an already used keyword so first assign it to PlayerNumber and change it back to Number here
+            FirstName,
+            LastName,
+            Position,
+            Status,
+            Height,
+            Weight,
+            BirthDate,
+            College,
+            Experience,
+            Name,
+            Age,
+            ShortName,
+            id,
+          };
+    
+          updatePlayerSubmit(updatedPlayer);
 
-      addPlayersSubmit(newPlayer);
-
-      toast.success('Played added successfully!');
-
-      return navigate('/players');
-    }
+          console.log(updatedPlayer);
+    
+          toast.success('Player Updated successfully!');
+    
+          return navigate(`/players/${id}`);
+      }
 
   return (
-    <>
     <section className="bg-red-50">
         <div className="container m-auto max-w-2xl py-24">
           <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
@@ -56,7 +60,7 @@ const AddPlayerPage = ( { addPlayersSubmit} ) => {
               <h2 className="text-3xl text-center font-semibold mb-6">Add Player</h2>
 
               <div className="mb-4">
-              <label htmlFor="Team" className="block text-gray-700 font-bold mb-2">Team *</label>
+                <label htmlFor="Team" className="block text-gray-700 font-bold mb-2">Team *</label>
                 <input
                   type="text"
                   id="Team"
@@ -224,15 +228,14 @@ const AddPlayerPage = ( { addPlayersSubmit} ) => {
                 <button
                   className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                   type="submit">
-                  Add Player
+                  Update
                 </button>
               </div>
             </form>
           </div>
         </div>
       </section>
-    </>
   )
 }
 
-export default AddPlayerPage
+export default EditPlayerPage

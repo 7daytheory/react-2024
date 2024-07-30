@@ -8,7 +8,6 @@ const Listing = ( {player}) => {
 
   let headshot = player.UsaTodayHeadshotNoBackgroundUrl || noHeadshot;
   
-  console.log(player);
   return (
     <div className='bg-white rounded-xl shadow-md relative'>
         <div className='p-4'>
@@ -16,8 +15,8 @@ const Listing = ( {player}) => {
                 <div className='text-gray-600 my-2'>{player.FirstName}</div>
                 <h3 className='text-xl font-bold'>{player.LastName}</h3>
             </div>
-            <div className='mb-5'>
-                <img src={headshot} alt="User HeadShot" className="flex justify-center mb-2 mt-2"/>
+            <div className='mb-5 flex justify-center'>
+                <img src={headshot} alt="API(currently) Doesn't have access to headshots" className="flex justify-center mb-2 mt-2 h-[200px]"/>
             </div>
             <button onClick={() => setShowMore((prevState) => !prevState)} className="text-red-500 mb-5 hover:text-red-600">Show {showMore ? 'less' : 'more'}</button>
             {showMore && (
@@ -33,7 +32,7 @@ const Listing = ( {player}) => {
             </div>
             <div className='text-orange-700 mb-3'>
                 <FaMapMarker className="inline text-lg mb-1 mr-1" />
-                {player.location}
+                {player.College}
             </div>
             <Link to={`/players/${player.id}`} className='h-[36px] bg-[#FFB612] hover:bg-[#FFC920] text-white px-4 py-2 rounded-lg text-center text-sm'>
                 Read More

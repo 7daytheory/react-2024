@@ -64,13 +64,13 @@ const playerPage = ( {deletePlayer}) => {
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-bold mb-6">Manage Player</h3>
               <Link
-                to={`/players/edit/${player.PlayerID}`}
+                to={`/edit-player/${player.id}`}
                 className="bg-[#FFB612] hover:bg-[#F7A600] text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
               >
                 Edit Player
               </Link>
               <button
-                onClick={() => onDeleteClick(player.PlayerID)}
+                onClick={() => onDeleteClick(player.id)}
                 className="bg-[#E31837] hover:bg-[#D10F2E] text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
               >
                 Delete Player
@@ -85,10 +85,10 @@ const playerPage = ( {deletePlayer}) => {
 };
 
 const playerLoader = async ({ params }) => {
-    const res = await fetch(`/api/players/${params.id}`);
-    const data = await res.json();
-    return data;
-}
+  const res = await fetch(`/api/players/${params.id}`);
+  const data = await res.json();
+  return data;
+};
 
 //playerPage is default, and exporting playerLoader as well.
 export {playerPage as default, playerLoader}
