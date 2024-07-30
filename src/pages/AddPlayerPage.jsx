@@ -158,6 +158,7 @@ const AddPlayerPage = ( { addPlayersSubmit} ) => {
                   value={BirthDate}
                   onChange={(e) => setBirthDate(e.target.value)}
                   className="border rounded w-full py-2 px-3"
+                  required
                 />
               </div>
 

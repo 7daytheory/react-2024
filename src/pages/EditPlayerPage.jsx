@@ -5,10 +5,10 @@ import { toast } from 'react-toastify';
 const EditPlayerPage = ( {updatePlayerSubmit }) => {
     const player = useLoaderData();
     const navigate = useNavigate();
-    const { PlayerId, id } = useParams();
+    const { id } = useParams();
 
     const [Team, setTeam] = useState(player.Team);
-    const [PlayerNumber, setPlayerNumber] = useState(player.PlayerNumber); // Change from Number to PlayerNumber
+    const [PlayerNumber, setPlayerNumber] = useState(player.Number);
     const [FirstName, setFirstName] = useState(player.FirstName);
     const [LastName, setLastName] = useState(player.LastName);
     const [Position, setPosition] = useState(player.Position);
@@ -26,7 +26,6 @@ const EditPlayerPage = ( {updatePlayerSubmit }) => {
         e.preventDefault();
 
         const updatedPlayer = {
-            PlayerId,
             Team,
             Number: PlayerNumber, // Number is an already used keyword so first assign it to PlayerNumber and change it back to Number here
             FirstName,
@@ -163,6 +162,7 @@ const EditPlayerPage = ( {updatePlayerSubmit }) => {
                   value={BirthDate}
                   onChange={(e) => setBirthDate(e.target.value)}
                   className="border rounded w-full py-2 px-3"
+                  required
                 />
               </div>
 

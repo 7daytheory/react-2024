@@ -34,7 +34,7 @@ const deletePlayer = async (id) => {
 
 //Update Player
 const updatePlayer = async (player) => {
-  const res = await fetch(`/api/players/${job.id}`, {
+  const res = await fetch(`/api/players/${player.id}`, {
     method: 'PUT',
     headers: {
       'Content-type': 'application-json'
